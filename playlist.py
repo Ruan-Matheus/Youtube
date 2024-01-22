@@ -1,7 +1,9 @@
 from pytube import Playlist
 import os
 import re
-    
+from change_files_extension import convert_ext as cext
+
+
 # Age restriction error!
 # Old isn't doing anything!
 def convert_ext(old, new, path = r'.\\'):
@@ -42,7 +44,7 @@ def download_playlist(path: str, url: str, mp3 = False, hd = False):
         except Exception as e:
             erros[video_name] = e
     if mp3:
-        convert_ext(".mp4", ".mp3", path)
+        cext(".mp4", ".mp3", path)
         
             
     print(f"\nProcesso Concluído. \nOs seu vídeos foram baixados no seguinte diretório: {path}")
@@ -55,6 +57,6 @@ def download_playlist(path: str, url: str, mp3 = False, hd = False):
 
 
 def teste():
-    path = r'C:\Users\Ruan\Music\Viole'
-    url = r'https://www.youtube.com/playlist?list=PLQYxbWW1sY2tfTeKDJd__JA-m3iesg-sa'
+    path = r'C:\Users\Ruan\Music\Viole3'
+    url = r'https://www.youtube.com/playlist?list=PLzMcBGfZo4-n40rB1XaJ0ak1bemvlqumQ'
     download_playlist(path, url, mp3 = True)
