@@ -1,7 +1,7 @@
 import re
 import os
 
-def convert_ext(old, new, path = r'.\\'):
+def convert_ext(new, path = r'.\\'):
     files = os.listdir(path)
     for file in files:
         filename, file_extension = os.path.splitext(file)
